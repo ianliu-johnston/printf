@@ -3,7 +3,9 @@
 int main(void)
 {
 	char c;
+	char *s;
 
 	c = 'Z';
-	_printf("Hello %c\n", c);
+	s = "Hello";
+	_printf("%s, %c, %c%c%c %s, %%", s, c,c,c,c, s);
 }
