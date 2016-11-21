@@ -8,7 +8,6 @@ int main(void)
 
 	c = 'Z';
 	s = "Hello";
-	len = _printf("%c, %s, %d\n", c, s, 5);
-	_printf("%d\n", len);
+	len = _printf("%c, %s\n", c, s, 5);
 	return (0);
 }
