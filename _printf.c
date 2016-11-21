@@ -12,9 +12,6 @@ int _printf(const char *format, ...)
 	v_types valid_types[] = {
 		{"c", found_char},
 		{"s", found_string},
-		{"d", found_int},
-		{"i", found_float},
-		{"%", found_percent}
 	};
 
 	/*Initializations*/
