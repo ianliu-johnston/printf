@@ -13,19 +13,14 @@ char *found_string(va_list *s)
 }
 char *found_int(va_list i)
 {
-	int toint;
-	int n;
-
-	toint = va_arg(i, char *);
-	for (n = 0; n < ; n /= 10)
-		_putchar(toint);
+	return (va_arg(i, int));
 
 }
 char *found_float(va_list flo)
 {
-	_putchar(va_arg(flo, double));
+	return (va_arg(flo, int));
 }
 char *found_percent(va_list percentsign)
 {
-	_putchar(va_arg(percentsign, int));
+	return (va_arg(percentsign, int));
 }
