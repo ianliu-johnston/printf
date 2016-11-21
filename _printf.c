@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 	int i, j, vlen, blen, hlen;
 	char *holder;
 	va_list argp;
-	void *buffer, *startbuffer;
+	char *buffer, *startbuffer;
 	v_types valid_types[] = {
 		{"c", found_char},
 		{"s", found_string},
@@ -52,10 +52,14 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-			_putchar(format[i]);
+		{
+			buffer[blen] = format[i];
+			blen++;
+		}
 		i++;
 	}
 	va_end(argp);
+	_puts(buffer, blen);
 	_putchar('\n');
 	return (vlen);
 }
