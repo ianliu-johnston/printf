@@ -64,3 +64,12 @@ int _putchar(char c);
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * _puts - print a buffer.
+ * @s: buffer passed
+ */
+void _puts(char *buffer, int size)
+{
+	write(1, buffer, size);
+}
