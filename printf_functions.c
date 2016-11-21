@@ -16,9 +16,19 @@ void found_string(va_list *s)
 }
 void found_int(va_list i)
 {
-       	_putchar(va_arg(i, int));
+	int toint;
+	int n;
+
+	toint = va_arg(i, char *);
+	for (n = 0; n > toint; n /= 10)
+		_putchar(toint);
+
 }
 void found_float(va_list flo)
 {
 	_putchar(va_arg(flo, double));
+}
+void found_percent(va_list percentsign)
+{
+	_putchar(va_arg(percentsign, int));
 }
