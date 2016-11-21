@@ -12,11 +12,11 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 
 /* printf_functions */
-void found_char(va_list c);
-void found_string(va_list *s);
-void found_int(va_list i);
-void found_float(va_list f);
-void found_percent(va_list percentsign);
+char *found_char(va_list c);
+char *found_string(va_list *s);
+char *found_int(va_list i);
+char *found_float(va_list f);
+char *found_percent(va_list percentsign);
 /* tools */
 int _atoi(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen);
