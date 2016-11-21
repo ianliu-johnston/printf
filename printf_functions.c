@@ -2,10 +2,13 @@
 #include "holberton.h"
 char *found_char(va_list c)
 {
-	char *string;
+	char string[2];
+	char *p;
 
-	string = (va_arg(c, int));
-	return (string);
+	p = string;
+	string[0] = va_arg(c, int);
+	string[1] = '\0';
+	return (p);
 }
 char *found_string(va_list *s)
 {
@@ -16,8 +19,12 @@ char *found_string(va_list *s)
 }
 char *found_int(va_list i)
 {
-	char *string;
+	int n;
+	char string[];
+	char *p;
 
+	for (n = 0; n < i; n *= 10)
+		;
 	string = (va_arg(i, int));
 	return (string);
 }
