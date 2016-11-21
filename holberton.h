@@ -19,6 +19,6 @@ void found_float(va_list f);
 void found_percent(va_list percentsign);
 /* tools */
 int _atoi(char *s);
-char *_memcpy(char *dest, char *src, unsigned int n);
+char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen);
 int _strlen(char *s);
 #endif
