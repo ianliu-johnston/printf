@@ -32,9 +32,10 @@ int _atoi(char *s)
  * @dest: pointer to destination memory area
  * @src: pointer to source memory area
  * @n: number of bytes to copy
+ * @bufferlen: current number of bytes taken by buffer
  * Return: pointer to destination memory area
  */
-char *_memcpy(char *dest, char *src, unsigned int n, bufferlen)
+char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen)
 {
 	unsigned int i;
 
