@@ -1,39 +1,41 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stddef.h>
-
+#include <stdio.h>
 int _printf(const char *format, ...)
 {
-	int i, j;
-	char *strings;
-	va_list ap;
+	int i, j, vlen;
+	va_list argp;
+	v_types valid_types[] = {
+		{"c", found_char},
+		{"s", found_string},
+		{"%", found_percent},
+		{"d", found_int},
+		{"i", found_float}
+	};
 
+	for (vlen = 0; valid_types[vlen]; vlen++)
+		;
+	printf("%d\n,", vlen);
 	i = j = 0;
-	va_start(ap, format);
-	while (format[i] != '\0')
+	va_start(argp, format);
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
-			switch(format[i + 1]){
-			case 'c':
-				_putchar(va_arg(ap, int));
-				i++;
-				break;
-			case 's':
-				strings = va_arg(ap, char *);
-				for (j = 0; strings[j] != '\0'; j++)
-					_putchar(strings[j]);
-				i++;
-				break;
-			case '%':
-				_putchar('%');
-				i++;
+			for (j = 0; j < vlen; j++)
+			{
+				if (format[i] == *valid_types[j].valid)
+				{
+					valid_types[j].f(argp);
+				}
 			}
 		}
 		else
 			_putchar(format[i]);
 		i++;
 	}
-	va_end(ap);
+	va_end(argp);
+	_putchar('\n');
 	return (0);
 }
