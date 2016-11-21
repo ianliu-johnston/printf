@@ -19,7 +19,6 @@ int _printf(const char *format, ...)
 		;
 	i = j = blen = 0;
 	holder = "";
-	printf("%s", holder);
 	buffer = malloc(1025);
 	startbuffer = buffer;
 	/* Variable arguments loops */
