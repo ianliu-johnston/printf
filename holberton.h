@@ -21,4 +21,5 @@ char *found_percent(va_list percentsign);
 int _atoi(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen);
 int _strlen(char *s);
+void _puts(char *buffer, int size);
 #endif
