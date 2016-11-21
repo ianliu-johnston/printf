@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include "tools.h"
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -20,7 +21,7 @@ int _printf(const char *format, ...)
 	/*Initializations*/
 	for (vlen = 0; valid_types[vlen].valid; vlen++)
 		;
-	i = j = bufferlen = 0;
+	i = j = blen = 0;
 	holder = "";
 	printf("%s", holder);
 	buffer = malloc(1025);
