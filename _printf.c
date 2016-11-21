@@ -1,12 +1,14 @@
 #include "holberton.h"
 #include <stddef.h>
+#include <stdlib.h>
 #include <stdio.h>
 int _printf(const char *format, ...)
 {
 	/*Declarations*/
-	int i, j, vlen;
+	int i, j, vlen, blen, hlen;
 	char *holder;
 	va_list argp;
+	void *buffer, *startbuffer;
 	v_types valid_types[] = {
 		{"c", found_char},
 		{"s", found_string},
@@ -18,9 +20,11 @@ int _printf(const char *format, ...)
 	/*Initializations*/
 	for (vlen = 0; valid_types[vlen].valid; vlen++)
 		;
-	i = j = 0;
+	i = j = bufferlen = 0;
 	holder = "";
 	printf("%s", holder);
+	buffer = malloc(1025);
+	startbuffer = buffer;
 	/* Variable arguments loops */
 	va_start(argp, format);
 	while (format && format[i])
@@ -31,7 +35,21 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == *valid_types[j].valid)
 				{
-					valid_types[j].f(argp);
+					holder = valid_types[j].f(argp);
+					hlen = _strlen(holder);
+					if (hlen + blen > 1024)
+					{
+						_puts(buffer, blen);
+						buffer = startbuffer;
+						_memcpy(buffer, holder, hlen, 0);
+						blen = hlen;
+					}
+					else
+					{
+						_memcpy(buffer, holder, hlen, blen);
+						blen += hlen;
+					}
+
 					i++;
 				}
 			}
