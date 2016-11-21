@@ -1,6 +1,7 @@
 #ifndef HOLB_H
 #define HOLB_H
 
+#include <stdarg.h>
 typedef struct validTypes
 {
 	char *valid;
@@ -10,8 +11,9 @@ typedef struct validTypes
 int _putchar(char c);
 int _printf(const char *format, ...);
 
-char found_char(int c);
-char found_string(char *s);
-int found_int(int i);
-float found_float(double f);
+void found_char(va_list c);
+void found_string(va_list *s);
+void found_int(va_list i);
+void found_float(va_list f);
+
 #endif
