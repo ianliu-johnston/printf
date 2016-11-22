@@ -33,3 +33,33 @@ char *(*get_valid_type(char s))(va_list)
 	/* handle NULL case */
 	return (NULL);
 }
+
+/**
+ * alloc_buffer - allocates characters to buffer, handling overflows
+ * @holder: string to allocate into buffer
+ * @hlen: holder length
+ * @buffer: buffer char array
+ * @blen: pointer to end of buffer
+ * Return: buffer length
+ */
+int alloc_buffer(char *holder, int hlen, char *buffer, int blen)
+{
+	int sizecpy;
+
+	if (hlen + blen > BUFSIZE)
+	{
+		sizecpy = BUFSIZE - blen;
+		_memcpy(buffer, holder, sizecpy, blen);
+		_puts(buffer, BUFSIZE);
+		*holder += (hlen - sizecpy);
+		_memcpy(buffer, holder, hlen - sizecpy, 0);
+		blen = sizecpy;
+	}
+	else
+	{
+		_memcpy(buffer, holder, hlen, blen);
+		blen += hlen;
+	}
+
+	return (blen);
+}
