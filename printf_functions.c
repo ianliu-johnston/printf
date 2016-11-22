@@ -73,3 +73,27 @@ char *found_int(va_list npoint)
 	}
 	return (string);
 }
+char *found_unsigned(va_list usign)
+{
+	int n;
+	int i, res, temp, expo, count;
+	char *string;
+
+	n = va_arg(usign, int);
+	count = i = 0;
+	expo = 1;
+	temp = res;
+	while (temp <= 10)
+	{
+		expo *= 10;
+		temp /= 10;
+		count++;
+	}
+	string = malloc(count * sizeof(char));
+	while (expo >= 1)
+	{
+		string[i++] = (((res / expo) % 10) + '0');
+		expo /= 10;
+	}
+	return (string);
+}
