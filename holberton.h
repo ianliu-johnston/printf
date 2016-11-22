@@ -1,6 +1,7 @@
 #ifndef HOLB_H
 #define HOLB_H
 
+#define BUFSIZE 10
 #include <stdarg.h>
 typedef struct validTypes
 {
