@@ -70,7 +70,8 @@ int _putchar(char c)
 
 /**
  * _puts - print a buffer.
- * @s: buffer passed
+ * @buffer: buffer passed
+ * @size: number of bytes to print
  */
 void _puts(char *buffer, int size)
 {
