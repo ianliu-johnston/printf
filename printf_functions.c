@@ -26,6 +26,8 @@ char *found_string(va_list *s)
 	char *string;
 
 	string = va_arg(s, char *);
+	if (string == NULL)
+		return ('\0');
 	return (string);
 }
 /**
