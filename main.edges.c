@@ -18,7 +18,7 @@ int main(void)
 	_printf("This is a null String\n %s\n", NULL);
 /* chars */
 	_printf("Characters: \n\n");
-	_printf("A character: %c\n", 'A')
+	_printf("A character: %c\n", 'A');
 	_printf("A null terminator: %c", '\0');
 /* numbers */
 	_printf("Escape a percent sign: %%\n", 'H');
@@ -44,7 +44,7 @@ int main(void)
 	printf("This is a null String\n %s\n", NULL);
 /* chars */
 	printf("Characters: \n\n");
-	printf("A character: %c\n", 'A')
+	printf("A character: %c\n", 'A');
 	printf("A null terminator: %c", '\0');
 /* numbers */
 	printf("Escape a percent sign: %%\n", 'H');
