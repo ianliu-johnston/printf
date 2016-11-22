@@ -51,7 +51,7 @@ int alloc_buffer(char *holder, int hlen, char *buffer, int blen)
 		sizecpy = BUFSIZE - blen;
 		_memcpy(buffer, holder, sizecpy, blen);
 		_puts(buffer, BUFSIZE);
-		*holder += (hlen - sizecpy);
+		holder += (hlen - sizecpy);
 		_memcpy(buffer, holder, hlen - sizecpy, 0);
 		blen = sizecpy;
 	}
