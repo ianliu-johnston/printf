@@ -22,3 +22,15 @@ TO DO / BUGS:
 8. %b = convert to binary, %p = pointer addr, %r = reverse, %R = ROT13
 1-7 are probably going to be implimented
 8+ may be restricted by time
+
+
+BUGS CAUGHT:
+
+1. BUFSIZE == 1024
+2. Return total count including buffer overflow counts
+
+
+ATTEMPTS MADE AND NOT WORKING:
+
+1. Check if format == NULL, return 0. Going to check return NULL next.
+2. Free malloc memory will break checks.
