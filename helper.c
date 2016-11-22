@@ -14,6 +14,7 @@ char *(*get_valid_type(char s))()
 	v_types valid_types[] = {
 		{"c", found_char},
 		{"s", found_string},
+		{"%", found_percent},
 		{NULL, NULL}
 	};
 

@@ -27,3 +27,16 @@ char *found_string(va_list *s)
 	string = va_arg(s, char *);
 	return (string);
 }
+/**
+  * found_percent -
+  * @s:
+  * Return: unmodified string
+  */
+char *found_percent(va_list percent)
+{
+	char *string;
+	percent++;
+
+	string = "%";
+	return (string);
+}

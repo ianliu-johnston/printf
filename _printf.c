@@ -32,7 +32,10 @@ int _printf(const char *format, ...)
 				blen = hlen;
 			}
 			else
-				_memcpy(buffer, holder, hlen, blen), blen += hlen;
+			{
+				_memcpy(buffer, holder, hlen, blen);
+				blen += hlen;
+			}
 			i++;
 		}
 		else
