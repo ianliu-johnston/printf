@@ -4,21 +4,14 @@
 #include <stdio.h>
 int _printf(const char *format, ...)
 {
-	/*Declarations*/
 	int i, blen, hlen;
-	char *holder;
 	va_list argp;
-	char *buffer, *startbuffer;
+	char *buffer, *holder;
 	char *(*chosenone)();
 
-	/*Initializations*/
-	i = blen = 0;
-	holder = "";
-	buffer = malloc(1025);
-	startbuffer = buffer;
-	/* Variable arguments loops */
+	buffer = malloc(BUFSIZE * sizeof(char));
 	va_start(argp, format);
-	while (format && format[i])
+	for (i = blen = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -26,19 +19,14 @@ int _printf(const char *format, ...)
 			holder = chosenone(argp);
 			hlen = _strlen(holder);
 
-			if (hlen + blen > 1024)
+			if (hlen + blen > BUFSIZE)
 			{
 				_puts(buffer, blen);
-				buffer = startbuffer;
 				_memcpy(buffer, holder, hlen, 0);
 				blen = hlen;
 			}
 			else
-			{
-				_memcpy(buffer, holder, hlen, blen);
-				blen += hlen;
-			}
-
+				_memcpy(buffer, holder, hlen, blen), blen += hlen;
 			i++;
 		}
 		else
@@ -46,7 +34,6 @@ int _printf(const char *format, ...)
 			buffer[blen] = format[i];
 			blen++;
 		}
-		i++;
 	}
 	va_end(argp);
 	_puts(buffer, blen);
