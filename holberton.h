@@ -19,6 +19,7 @@ char *found_char(va_list c);
 char *found_string(va_list *s);
 char *found_percent();
 char *found_int(va_list n);
+char *found_unsigned(va_list usign);
 /* tools */
 int _atoi(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen);
