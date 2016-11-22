@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			holder[0] = format[i];
+			holder = ctos(format[i]);
 			blen = alloc_buffer(holder, 1, buffer, blen);
 		}
 	}

@@ -63,3 +63,18 @@ int alloc_buffer(char *holder, int hlen, char *buffer, int blen)
 
 	return (blen);
 }
+/**
+  * ctos - converts a character to a string
+  * @c: character to convert
+  * Return: pointer to string
+  */
+char *ctos(char c)
+{
+	char string[2];
+	char *p;
+
+	p = string;
+	string[0] = c;
+	string[1] = '\0';
+	return (p);
+}
