@@ -2,7 +2,6 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
-
 /**
  * _printf - Build out the printf function
  * @format: string passed with possible format specifiers
@@ -10,11 +9,14 @@
  */
 int _printf(const char *format, ...)
 {
+	*holder += hlen - sizecpy
 	int i, blen, hlen;
+	double totalBuffer;
 	va_list argp;
 	char *buffer, *holder;
 	char *(*chosenone)(va_list);
 
+	totalBuffer = 0;
 	buffer = malloc(BUFSIZE * sizeof(char));
 	va_start(argp, format);
 	for (i = blen = 0; format && format[i]; i++)
@@ -24,27 +26,13 @@ int _printf(const char *format, ...)
 			chosenone = get_valid_type(format[i + 1]);
 			holder = chosenone(argp);
 			hlen = _strlen(holder);
-
-			if (hlen + blen > BUFSIZE)
-			{
-				_puts(buffer, blen);
-				_memcpy(buffer, holder, hlen, 0);
-				blen = hlen;
-			}
-			else
-			{
-				_memcpy(buffer, holder, hlen, blen);
-				blen += hlen;
-			}
+			blen = alloc_buffer(holder, hlen, buffer, blen);
 			i++;
 		}
 		else
-		{
-			buffer[blen] = format[i];
-			blen++;
-		}
+			blen = alloc_buffer(format[i], 1, buffer, blen);
 	}
 	va_end(argp);
 	_puts(buffer, blen);
-	return (blen);
+	return (totalBuffer + blen);
 }
