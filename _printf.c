@@ -2,6 +2,12 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+/**
+ * _printf - Build out the printf function
+ * @format: string passed with possible format specifiers
+ * Return: number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 	int i, blen, hlen;
