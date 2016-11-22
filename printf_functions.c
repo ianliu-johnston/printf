@@ -28,14 +28,12 @@ char *found_string(va_list *s)
 	return (string);
 }
 /**
-  * found_percent -
-  * @s:
-  * Return: unmodified string
+  * found_percent - passes a % sign through
+  * Return: percent sign as a character string
   */
-char *found_percent(va_list percent)
+char *found_percent(void)
 {
 	char *string;
-	percent++;
 
 	string = "%";
 	return (string);

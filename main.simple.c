@@ -1,14 +1,16 @@
 #include "holberton.h"
 #include <stdio.h>
+/**
+  * main - entry point
+  * Return: 0 on success
+  */
 int main(void)
 {
 	char c;
-	int len;
 	char *s;
 
 	c = 'Z';
 	s = "Hello";
-	len = _printf("%c, %s\n", c, s);
-	printf("Number of identiers: %d\n", len);
+	_printf("asdf: %%, %c, %s\n", c, s);
 	return (0);
 }
