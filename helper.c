@@ -15,6 +15,8 @@ char *(*get_valid_type(char s))(va_list)
 		{"c", found_char},
 		{"s", found_string},
 		{"%", found_percent},
+		{"d", found_int},
+		{"i", found_int},
 		{NULL, NULL}
 	};
 
