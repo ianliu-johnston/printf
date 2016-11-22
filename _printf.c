@@ -9,12 +9,11 @@
  */
 int _printf(const char *format, ...)
 {
-	*holder += hlen - sizecpy
 	int i, blen, hlen;
 	double totalBuffer;
 	va_list argp;
 	char *buffer, *holder;
-	char *(*chosenone)(va_list);
+	char *(*pointer_get_valid)(va_list);
 
 	totalBuffer = 0;
 	buffer = malloc(BUFSIZE * sizeof(char));
@@ -23,14 +22,17 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			chosenone = get_valid_type(format[i + 1]);
-			holder = chosenone(argp);
+			pointer_get_valid = get_valid_type(format[i + 1]);
+			holder = pointer_get_valid(argp);
 			hlen = _strlen(holder);
 			blen = alloc_buffer(holder, hlen, buffer, blen);
 			i++;
 		}
 		else
-			blen = alloc_buffer(format[i], 1, buffer, blen);
+		{
+			holder[0] = format[i];
+			blen = alloc_buffer(holder, 1, buffer, blen);
+		}
 	}
 	va_end(argp);
 	_puts(buffer, blen);
