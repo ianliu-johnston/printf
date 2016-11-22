@@ -28,6 +28,7 @@ BUGS CAUGHT:
 
 1. BUFSIZE == 1024
 2. Return total count including buffer overflow counts
+3. ^@ for char type nulls
 
 
 ATTEMPTS MADE AND NOT WORKING:
