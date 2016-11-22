@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 /**
@@ -75,15 +76,14 @@ char *found_int(va_list npoint)
 }
 char *found_unsigned(va_list usign)
 {
-	int n;
-	int i, res, temp, expo, count;
+	unsigned int i, res, temp, expo, count;
 	char *string;
 
-	n = va_arg(usign, int);
+	res = va_arg(usign, unsigned int);
 	count = i = 0;
 	expo = 1;
 	temp = res;
-	while (temp <= 10)
+	while (temp >= 10)
 	{
 		expo *= 10;
 		temp /= 10;
