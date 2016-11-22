@@ -40,8 +40,9 @@ char *found_percent(void)
 	return (string);
 }
 /**
-  * found_percent - passes a % sign through
-  * Return: percent sign as a character string
+  * found_int - converts integers into character arrays
+  * @npoint: integer to convert from va_args
+  * Return: pointer to string
   */
 char *found_int(va_list npoint)
 {
@@ -62,7 +63,7 @@ char *found_int(va_list npoint)
 	}
 	string = malloc(count * sizeof(char));
 	if (n < 0)
-	       	string[i++] = '-';
+		string[i++] = '-';
 	while (expo >= 1)
 	{
 		string[i++] = (((res / expo) % 10) * -1 + '0');
