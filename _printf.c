@@ -15,6 +15,9 @@ int _printf(const char *format, ...)
 	char *buffer, *holder;
 	char *(*chosenone)(va_list);
 
+	if (format == NULL)
+		return (0);
+
 	buffer = malloc(BUFSIZE * sizeof(char));
 	va_start(argp, format);
 	for (i = blen = 0; format && format[i]; i++)
