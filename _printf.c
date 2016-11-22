@@ -9,7 +9,6 @@
  */
 int _printf(const char *format, ...)
 {
-	*holder += hlen - sizecpy
 	int i, blen, hlen;
 	double totalBuffer;
 	va_list argp;
