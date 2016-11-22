@@ -1,0 +1,51 @@
+.TH man 1 "21 November 2016" "0.01" "_printf man page"
+.SH NAME
+.B _printf
+- formatted output conversion
+.SH SYNOPSIS
+int _printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf function writes output to
+.I stdout
+produced according to
+.I formats
+as described below.
+
+.B Return value
+.br
+.RS 3
+Upon successful return, these functions return the number of characters
+printed (excluding the null byte used to end output to strings).
+.RE
+
+.B The conversion specifier
+.br
+.RS 3
+A character that specifies the type of conversion to be applied. The
+conversion specifiers and their meanings are:
+.TP
+.B d, i
+The \fIint\fR argument is converted to signed decimal notation. The
+precision, if any, gives the minimum number of digits that must
+appear; if the converted value requires fewer digits, it is
+padded on the left with zeros. The default precision is 1. When
+0 is printed with an explicit precision 0, the output it empty.
+.LP
+.TP
+.B o, u, x, X
+The \fIunsigned int\fR argument is converted to unsigned octal (\fBo\fR),
+unsigned decimal (\fBu\fR), or unsigned hexadecimal (\fBx\fR and \fBX\fR) notation.
+.LP
+.TP
+.B c
+The \fIint\fR argument is converted to an \fIunsigned char\fR, and the
+resulting character is written.
+.LP
+.TP
+.B s
+The \fIconst char *\fR argument is expected to be a pointer to an array
+of character type (pointer to a string). Characters from the array are
+written up to (but not including) a terminating null byte ('\0').
+.LP
+
+.RE
