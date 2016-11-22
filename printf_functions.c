@@ -74,6 +74,11 @@ char *found_int(va_list npoint)
 	}
 	return (string);
 }
+/**
+  * found_unsigned - converts unsigned to char arrays
+  * @usign: unsigned int to convert from va_args
+  * Return: pointer to string
+  */
 char *found_unsigned(va_list usign)
 {
 	unsigned int i, res, temp, expo, count;
