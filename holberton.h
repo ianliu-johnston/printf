@@ -3,6 +3,7 @@
 
 #define BUFSIZE 10
 #include <stdarg.h>
+
 typedef struct validTypes
 {
 	char *valid;
@@ -11,6 +12,7 @@ typedef struct validTypes
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+char *(*helper(char s))();
 
 /* printf_functions */
 char *found_char(va_list c);
