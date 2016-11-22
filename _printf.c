@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int i, blen, hlen;
 	va_list argp;
 	char *buffer, *holder;
-	char *(*chosenone)();
+	char *(*chosenone)(va_list);
 
 	buffer = malloc(BUFSIZE * sizeof(char));
 	va_start(argp, format);
