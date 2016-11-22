@@ -12,7 +12,7 @@ typedef struct validTypes
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-char *(*helper(char s))();
+char *(*get_valid_type(char s))();
 
 /* printf_functions */
 char *found_char(va_list c);

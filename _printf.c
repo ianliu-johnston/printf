@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			chosenone = helper(format[i + 1]);
+			chosenone = get_valid_type(format[i + 1]);
 			holder = chosenone(argp);
 			hlen = _strlen(holder);
 
@@ -38,5 +38,5 @@ int _printf(const char *format, ...)
 	va_end(argp);
 	_puts(buffer, blen);
 	_putchar('\n');
-	return (0);
+	return (blen);
 }
