@@ -43,6 +43,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(argp);
 	_puts(buffer, blen);
-	_putchar('\n');
 	return (blen);
 }

@@ -8,7 +8,7 @@
  * @s: Type to check given as char
  * Return: pointer function of char type, valid_type matched
  */
-char *(*get_valid_type(char s))()
+char *(*get_valid_type(char s))(va_list)
 {
 	int i;
 	v_types valid_types[] = {
