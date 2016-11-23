@@ -51,10 +51,7 @@ int alloc_buffer(char *holder, int hlen, char *buffer, int blen, double *passTot
 		sizecpy = BUFSIZE - blen;
 		_memcpy(buffer, holder, sizecpy, blen);
 		_puts(buffer, BUFSIZE);
-		printf("\n\nBuffer filled. Resetting now\n");
-		printf("%p\n", holder);
 		holder += sizecpy;
-		printf("holder moved from %p to %p\n", holder - sizecpy, holder);
 		_memcpy(buffer, holder, hlen - sizecpy, 0);
 		blen = hlen - sizecpy;
 		*passTotal += BUFSIZE;
