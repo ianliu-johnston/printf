@@ -13,19 +13,20 @@ int _printf(const char *format, ...)
 	double totalBuffer;
 	double *passTotal;
 	va_list argp;
-	char *buffer, *holder;
+	char buffer[BUFSIZE], *holder;
 	char *(*pointer_get_valid)(va_list);
 
 	totalBuffer = 0;
 	passTotal = &totalBuffer;
-	buffer = malloc(BUFSIZE * sizeof(char));
 	va_start(argp, format);
 	for (i = blen = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			pointer_get_valid = get_valid_type(format[i + 1]);
-			holder = pointer_get_valid(argp);
+			holder = (pointer_get_valid == NULL) ?
+				found_nothing(format[i + 1]) :
+				pointer_get_valid(argp);
 			hlen = _strlen(holder);
 			blen = alloc_buffer(holder, hlen, buffer, blen, passTotal);
 			i++;

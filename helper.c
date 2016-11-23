@@ -30,7 +30,6 @@ char *(*get_valid_type(char s))(va_list)
 		}
 	}
 
-	/* handle NULL case */
 	return (NULL);
 }
 
@@ -77,5 +76,22 @@ char *ctos(char c)
 	p = string;
 	string[0] = c;
 	string[1] = '\0';
+	return (p);
+}
+
+/**
+ * found_nothing - no matches found but % passed
+ * @c: character unmatched to return and store
+ * Return: string with percent and character.
+ */
+char *found_nothing(char c)
+{
+	char string[3];
+	char *p;
+
+	p = string;
+	string[0] = '%';
+	string[1] = c;
+	string[2] = '\0';
 	return (p);
 }
