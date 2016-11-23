@@ -15,7 +15,6 @@ typedef struct validTypes
 	char *(*f)();
 } v_types;
 
-int _putchar(char c);
 int _printf(const char *format, ...);
 char *(*get_valid_type(char s))(va_list);
 char *found_char(va_list c);

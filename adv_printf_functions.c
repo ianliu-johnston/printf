@@ -28,20 +28,26 @@ char *found_reverse(va_list s)
  */
 char *found_rot13(va_list s)
 {
-	int i;
+	int i, size;
+	char *arg;
 	char *hold;
 	char storeh[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
 	char storel[] = "nopqrstuvwxyzabcdefghijklm";
 
-	hold = va_arg(s, char *);
+	arg = va_arg(s, char *);
+	size = _strlen(arg);
+	hold = malloc((size + 1) * sizeof(char));
 
-	for (i = 0; hold[i] != '\0'; i++)
+	printf("hold: %s\n", hold);
+	hold[0] = 'Z';
+	printf("hold: %s\n", hold);
+	for (i = 0; arg[i] != '\0'; i++)
 	{
-		if ((hold[i] > 64 && hold[i] < 91) ||
-		    (hold[i] > 96 && hold[i] < 123))
+		if ((arg[i] >= 'A' && arg[i] <= 'Z') ||
+		    (arg[i] >= 'a' && arg[i] <= 'z'))
 		{
-			hold[i] = (hold[i] - 65 > 25) ?
-				storel[hold[i] - 97] : storeh[hold[i] - 65];
+			hold[i] = (arg[i] - 'A' > 25) ?
+				storel[arg[i] - 'a'] : storeh[arg[i] - 'A'];
 		}
 	}
 	return (hold);

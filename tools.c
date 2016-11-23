@@ -29,16 +29,6 @@ int _strlen(char *s)
 	return (i);
 }
 /**
-  * _putchar - prints a character.
-  * @c: character to print
-  * Return: call to printed character
-  */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * _puts - print a buffer.
  * @buffer: buffer passed
  * @size: number of bytes to print
