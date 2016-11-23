@@ -59,7 +59,7 @@ int alloc_buffer(char *holder, int hlen, char *buffer, int blen, double *total)
 		holder += sizecpy;
 		_memcpy(buffer, holder, hlen - sizecpy, 0);
 		blen = hlen - sizecpy;
-		*passTotal += BUFSIZE;
+		*total += BUFSIZE;
 	}
 	else
 	{
