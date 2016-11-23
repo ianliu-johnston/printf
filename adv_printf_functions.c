@@ -44,6 +44,8 @@ char *found_rot13(va_list s)
 			hold[i] = (arg[i] - 'A' > 25) ?
 				storel[arg[i] - 'a'] : storeh[arg[i] - 'A'];
 		}
+		else
+			hold[i] = arg[i];
 	}
 	hold[i] = '\0';
 	return (hold);
