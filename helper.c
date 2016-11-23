@@ -42,7 +42,7 @@ char *(*get_valid_type(char s))(va_list)
  * @blen: pointer to end of buffer
  * Return: buffer length
  */
-int alloc_buffer(char *holder, int hlen, char *buffer, int blen)
+int alloc_buffer(char *holder, int hlen, char *buffer, int blen, double *passTotal)
 {
 	int sizecpy;
 
@@ -51,9 +51,13 @@ int alloc_buffer(char *holder, int hlen, char *buffer, int blen)
 		sizecpy = BUFSIZE - blen;
 		_memcpy(buffer, holder, sizecpy, blen);
 		_puts(buffer, BUFSIZE);
-		holder += (hlen - sizecpy);
+		printf("\n\nBuffer filled. Resetting now\n");
+		printf("%p\n", holder);
+		holder += sizecpy;
+		printf("holder moved from %p to %p\n", holder - sizecpy, holder);
 		_memcpy(buffer, holder, hlen - sizecpy, 0);
-		blen = sizecpy;
+		blen = hlen - sizecpy;
+		*passTotal += BUFSIZE;
 	}
 	else
 	{
