@@ -32,9 +32,9 @@ padded on the left with zeros. The default precision is 1. When
 0 is printed with an explicit precision 0, the output it empty.
 .LP
 .TP
-.B o, u, x, X
+.B o, u
 The \fIunsigned int\fR argument is converted to unsigned octal (\fBo\fR),
-unsigned decimal (\fBu\fR), or unsigned hexadecimal (\fBx\fR and \fBX\fR) notation.
+or unsigned decimal (\fBu\fR).
 .LP
 .TP
 .B c
@@ -46,6 +46,18 @@ resulting character is written.
 The \fIconst char *\fR argument is expected to be a pointer to an array
 of character type (pointer to a string). Characters from the array are
 written up to (but not including) a terminating null byte ('\0').
+.LP
+.TP
+.B r
+The \fIchar *\fR argument is expected to be a pointer to an array of
+character type (pointer to a string). Characters from the array are then
+reversed and returned.
+.LP
+.TP
+.B R
+The \fIchar *\fR argument is expected to be a pointer to an array of
+character type (pointer to a string). Characters from the array are then
+converted and rotated 13 characters forward in the alphabet.
 .LP
 
 .RE
