@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 /**
@@ -37,10 +36,6 @@ char *found_rot13(va_list s)
 	arg = va_arg(s, char *);
 	size = _strlen(arg);
 	hold = malloc((size + 1) * sizeof(char));
-
-	printf("hold: %s\n", hold);
-	hold[0] = 'Z';
-	printf("hold: %s\n", hold);
 	for (i = 0; arg[i] != '\0'; i++)
 	{
 		if ((arg[i] >= 'A' && arg[i] <= 'Z') ||
@@ -50,5 +45,6 @@ char *found_rot13(va_list s)
 				storel[arg[i] - 'a'] : storeh[arg[i] - 'A'];
 		}
 	}
+	hold[i] = '\0';
 	return (hold);
 }
