@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
-  * found_octal -
+  * found_octal - converts decimal numbers to octal
   * @oct: octal number to print
   * Return: pointer to string
   */
@@ -11,7 +11,7 @@ char *found_octal(va_list n)
 	unsigned int pos, temp, result, oct, i;
 	char *string;
 
-	oct = n;
+	oct = va_arg(n, unsigned int);
 	result = i = 0;
 	pos = 1;
 	while (oct)
@@ -33,16 +33,33 @@ char *found_octal(va_list n)
 	return (string);
 }
 /**
-  * found_hex -
+  * found_hex - converse decimal numbers to hexadecimal
   * @hex: hexadecimal number to print with lower case letters
   * Return: pointer to string
   */
-char *found_hex(va_list hex)
+char *found_hex(va_list n)
 {
+	int i, hex;
+	char *hexDigits = "0123456789abcdef";
 	char *string;
 
-	hex++;
-	string = "";
+	hex = va_arg(n, unsigned int);
+	for (i = 0; i <  hex; i++)
+	{
+		if (i % 16 == 0)
+		{
+			temp % 16;
+		}
+	}
+
+
+	string = malloc(temp * sizeof(char) + 1);
+	for ( i = 0 ; i < temp; i++)
+	{
+		string[i] = ((result / pos) % 10) + '0';
+		pos /= 10;
+	}
+	string[i] = '\0';
 	return (string);
 }
 /**
