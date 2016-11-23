@@ -1,39 +1,39 @@
-# Re-creation of the printf function
+# _printf
 
-List of files:
-
-holberton.h: Header file contains, <stdarg.h> and struct valid types. All tools tools.c and all functions in printf_functions. 
-
-_printf.c: Main printf function.
-
-printf_functions.c: Main helper file. Contains found_char, found_string, found_int, found_float, found_percent
-
-tools.c: Secondary helper file. Contains _atoi, _memcpy, _strlen, and _putchar
-
-TO DO / BUGS:
-
-1. Check for NULL strings with %s and %c functions.
-2. Check for NULL format string
-3. Checks for NULL type strings
-4. Betty Documentation for *(*get_valid_type(char s))(va_list)
-5. Make sure the buffer resets when it is full
-6. Man Page
-7. %u, %o, %x, %X
-8. %b = convert to binary, %p = pointer addr, %r = reverse, %R = ROT13
-1-7 are probably going to be implimented
-8+ may be restricted by time
+A re-creation of the printf function in C!
 
 
-BUGS CAUGHT:
+## Requirements for this project
 
-1. BUFSIZE == 1024
-2. Return total count including buffer overflow counts
-3. ^@ for char type nulls
-4. "%%%" vs "%%"
-5. If we find a "%" identifier, but no matching character, handle this error.
+- Code must comply with the [Betty](https://github.com/holbertonschool/Betty) style and document checks.
+- Compile code using flags: `-Wall`, `-Werror`, `-Wextra`, `-pedantic`, `-Wno-format`
+- Cannot use global variables.
+- Restricted to no more than 5 functions per file.
+- Function prototypes should be included in header file `holberton.h`
+- Header files should be include guarded.
+- Authorized functions and macros:
+..* `write` (`man 2 write`)
+..* `malloc` (`man 3 malloc`)
+..* `free` (`man 3 free`)
+..* `va_start` (`man 3 va_start`)
+..* `va_end` (`man 3 va_end`)
+..* `va_copy` (`man 3 va_copy`)
+..* `va_arg` (`man 3 va_arg`)
 
 
-ATTEMPTS MADE AND NOT WORKING:
+## File Descriptions
 
-1. Check if format == NULL, return 0. Going to check return NULL next.
-2. Free malloc memory will break checks.
+- `holberton.h`: Header file which contains `<stdarg.h>`, constant `BUFSIZE`, struct `validTypes` definition, and all function prototypes.
+- `_printf.c`: Main printf function
+- `helper.c`: Core helper functions for printf, including function `get_valid_type` which returns a function pointer, and `alloc_buffer` which fills buffer space and handles a full buffer fill.
+- `tools.c`: Helper functions for general use, including `_strlen` to find string length, `_memcpy` that copies characters into a destination, and `_puts` that calls the `write` function to print an entire buffer.
+- `printf_functions.c`: Functions stored within our struct `validTypes` array, which handles char, string, %, int, and unsigned int.
+- `adv_printf_functions.c`: Functions stored within our struct `validTypes` array, which handles reverse, and rot13.
+- `adv2_printf_functions.c`: Functions stored within our struct `validTypes` array, which handles octal, and hex.
+
+
+## Team
+
+*Ian Liu-Johnston* - [Github](https://github.com/ianliu-johnston) || [Twitter](https://twitter.com/Concativerse)
+
+*Philip Yoo* - [Github](https://github.com/philipyoo) || [Twitter](https://twitter.com/philipYoo10)
