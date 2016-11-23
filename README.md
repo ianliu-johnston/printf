@@ -29,6 +29,8 @@ BUGS CAUGHT:
 1. BUFSIZE == 1024
 2. Return total count including buffer overflow counts
 3. ^@ for char type nulls
+4. "%%%" vs "%%"
+5. If we find a "%" identifier, but no matching character, handle this error.
 
 
 ATTEMPTS MADE AND NOT WORKING:
