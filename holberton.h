@@ -27,7 +27,6 @@ char *found_nothing(char);
 char *found_reverse(va_list s);
 char *found_rot13(va_list s);
 char *found_octal(va_list n);
-int _atoi(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen);
 int _strlen(char *s);
 void _puts(char *buffer, int size);
