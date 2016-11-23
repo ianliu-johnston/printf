@@ -4,6 +4,11 @@
 #define BUFSIZE 1024
 #include <stdarg.h>
 
+/**
+  * struct validTypes - structure to lookup functions for valid types
+  * @valid: flags are preceded by a '%' character.
+  * @f: pointer to function
+  */
 typedef struct validTypes
 {
 	char *valid;
