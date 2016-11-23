@@ -3,7 +3,7 @@
 #include "holberton.h"
 /**
   * found_octal - converts decimal numbers to octal
-  * @oct: octal number to print
+  * @n: octal number to print
   * Return: pointer to string
   */
 char *found_octal(va_list n)
@@ -24,7 +24,7 @@ char *found_octal(va_list n)
 	temp = i;
 	pos /= 10;
 	string = malloc(temp * sizeof(char) + 1);
-	for ( i = 0 ; i < temp; i++)
+	for (i = 0 ; i < temp; i++)
 	{
 		string[i] = ((result / pos) % 10) + '0';
 		pos /= 10;
