@@ -24,8 +24,6 @@ char *found_nothing(char);
 char *found_reverse(va_list s);
 char *found_rot13(va_list s);
 char *found_octal(va_list n);
-char *found_hex(va_list hex);
-char *found_HEX(va_list capHex);
 /* tools */
 int _atoi(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen);
