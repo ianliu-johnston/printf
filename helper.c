@@ -18,6 +18,11 @@ char *(*get_valid_type(char s))(va_list)
 		{"d", found_int},
 		{"i", found_int},
 		{"u", found_unsigned},
+		{"o", found_octal},
+		{"x", found_hex},
+		{"X", found_HEX},
+		{"r", found_reverse},
+		{"R", found_rot13},
 		{NULL, NULL}
 	};
 
