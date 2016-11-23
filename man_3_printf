@@ -59,5 +59,8 @@ The \fIchar *\fR argument is expected to be a pointer to an array of
 character type (pointer to a string). Characters from the array are then
 converted and rotated 13 characters forward in the alphabet.
 .LP
-
 .RE
+.SH AUTHOR
+Ian Liu-Johnston <https://github.com/ianliu-johnston>
+
+Philip Yoo <https://github.com/philipyoo>
