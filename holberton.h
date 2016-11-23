@@ -31,8 +31,7 @@ int _atoi(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n, unsigned int bufferlen);
 int _strlen(char *s);
 void _puts(char *buffer, int size);
-int alloc_buffer(char *holder, int hlen, 
-		char *buffer, int blen, double *total);
+int alloc_buffer(char *holder, int hlen, char *buffer, int blen, double *total);
 char *ctos(char c);
 
 #endif
