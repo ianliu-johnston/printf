@@ -11,13 +11,13 @@ int _printf(const char *format, ...)
 {
 	int i, blen, hlen;
 	double totalBuffer;
-	double *passTotal;
+	double *total;
 	va_list argp;
 	char buffer[BUFSIZE], *holder;
 	char *(*pointer_get_valid)(va_list);
 
 	totalBuffer = 0;
-	passTotal = &totalBuffer;
+	total = &totalBuffer;
 	va_start(argp, format);
 	for (i = blen = 0; format && format[i]; i++)
 	{
@@ -28,13 +28,13 @@ int _printf(const char *format, ...)
 				found_nothing(format[i + 1]) :
 				pointer_get_valid(argp);
 			hlen = _strlen(holder);
-			blen = alloc_buffer(holder, hlen, buffer, blen, passTotal);
+			blen = alloc_buffer(holder, hlen, buffer, blen, total);
 			i++;
 		}
 		else
 		{
 			holder = ctos(format[i]);
-			blen = alloc_buffer(holder, 1, buffer, blen, passTotal);
+			blen = alloc_buffer(holder, 1, buffer, blen, total);
 		}
 	}
 	va_end(argp);

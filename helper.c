@@ -39,9 +39,10 @@ char *(*get_valid_type(char s))(va_list)
  * @hlen: holder length
  * @buffer: buffer char array
  * @blen: pointer to end of buffer
+ * @total: pointer to total character counter
  * Return: buffer length
  */
-int alloc_buffer(char *holder, int hlen, char *buffer, int blen, double *passTotal)
+int alloc_buffer(char *holder, int hlen, char *buffer, int blen, double *total)
 {
 	int sizecpy;
 
