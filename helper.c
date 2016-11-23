@@ -38,30 +38,30 @@ char *(*get_valid_type(char s))(va_list)
 
 /**
  * alloc_buffer - allocates characters to buffer, handling overflows
- * @holder: string to allocate into buffer
- * @hlen: holder length
+ * @hold: string to allocate into buffer
+ * @hlen: hold length
  * @buffer: buffer char array
  * @blen: pointer to end of buffer
  * @total: pointer to total character counter
  * Return: buffer length
  */
-int alloc_buffer(char *holder, int hlen, char *buffer, int blen, double *total)
+int alloc_buffer(char *hold, int hlen, char *buffer, int blen, double *total)
 {
 	int sizecpy;
 
 	if (hlen + blen > BUFSIZE)
 	{
 		sizecpy = BUFSIZE - blen;
-		_memcpy(buffer, holder, sizecpy, blen);
+		_memcpy(buffer, hold, sizecpy, blen);
 		_puts(buffer, BUFSIZE);
-		holder += sizecpy;
-		_memcpy(buffer, holder, hlen - sizecpy, 0);
+		hold += sizecpy;
+		_memcpy(buffer, hold, hlen - sizecpy, 0);
 		blen = hlen - sizecpy;
 		*total += BUFSIZE;
 	}
 	else
 	{
-		_memcpy(buffer, holder, hlen, blen);
+		_memcpy(buffer, hold, hlen, blen);
 		blen += hlen;
 	}
 
