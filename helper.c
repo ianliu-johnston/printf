@@ -1,8 +1,6 @@
 #include "holberton.h"
 #include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h>
-
 /**
  * get_valid_type - ID the type specifier passed by printf with a valid_type
  * @s: Type to check given as char
@@ -35,7 +33,6 @@ char *(*get_valid_type(char s))(va_list)
 
 	return (NULL);
 }
-
 /**
  * alloc_buffer - allocates characters to buffer, handling overflows
  * @hold: string to allocate into buffer
@@ -47,7 +44,7 @@ char *(*get_valid_type(char s))(va_list)
  */
 int alloc_buffer(char *hold, int hlen, char *buffer, int blen, double *total)
 {
-	int sizecpy;
+	int sizecpy = 0;
 
 	if (hlen + blen > BUFSIZE)
 	{
@@ -74,15 +71,13 @@ int alloc_buffer(char *hold, int hlen, char *buffer, int blen, double *total)
   */
 char *ctos(char c)
 {
-	char string[2];
+	char string[1];
 	char *p;
 
 	p = string;
 	string[0] = c;
-	string[1] = '\0';
 	return (p);
 }
-
 /**
  * found_nothing - no matches found but % passed
  * @c: character unmatched to return and store

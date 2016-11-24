@@ -1,7 +1,7 @@
 #ifndef HOLB_H
 #define HOLB_H
 
-#define BUFSIZE 1024
+#define BUFSIZE 1025
 #include <stdarg.h>
 
 /**

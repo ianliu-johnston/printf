@@ -16,10 +16,15 @@ int _printf(const char *format, ...)
 	char buffer[BUFSIZE], *holder;
 	char *(*pointer_get_valid)(va_list);
 
+	for (i = 0; i < BUFSIZE; i++)
+	{
+		buffer[i] = 0;
+	}
 	totalBuffer = 0;
+	pointer_get_valid = NULL;
 	total = &totalBuffer;
 	va_start(argp, format);
-	for (i = blen = 0; format && format[i]; i++)
+	for (i = blen = hlen = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
