@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 /**
@@ -64,7 +63,7 @@ char *found_int(va_list npoint)
 		temp /= 10;
 		count++;
 	}
-	string = malloc(count * sizeof(char));
+	string = malloc((count + 1) * sizeof(char));
 	if (n < 0)
 		string[i++] = '-';
 	while (expo >= 1)
@@ -94,7 +93,7 @@ char *found_unsigned(va_list usign)
 		temp /= 10;
 		count++;
 	}
-	string = malloc(count * sizeof(char));
+	string = malloc((count + 1) * sizeof(char));
 	while (expo >= 1)
 	{
 		string[i++] = (((res / expo) % 10) + '0');
